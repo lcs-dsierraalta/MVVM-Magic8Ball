@@ -7,6 +7,9 @@
 
 import Foundation
 
+// Make an instance of the view model (to store qustions and advice)
+var advisor = AdviceViewModel()
+
 // Program name
 print("MAGIC 8 BALL")
 print("============")
@@ -27,14 +30,6 @@ print("")
 print("You said: \(input)")
 print("")
 
-// Provide a response based on the random value
-// BASED UPON: https://en.wikipedia.org/wiki/Magic_8-Ball#Possible_answers
-// TIP: Use the library to get code templates
-//      Command-Shift-L
-//
-
-var response = ""
 
 // Provide the advice
-let advisor = Magic8Ball()
-print(advisor.getResponse())
+print(advisor.provideResponseFor(givenQuery: input))
