@@ -35,4 +35,39 @@ NOTE: Questions should be phrased such
     
     // Provide the advice
     print(advisor.provideResponseFor(givenQuery: input))
+    
+    // Ask whether the user wants to continue or see history of advice
+    while true {
+        print("")
+        print("See history of advice given? (Y/N)")
+        let selection = readLine()!
+        if selection == "Y" {
+            
+            // Show history
+            print("")
+            print("History")
+            print("-------")
+            for session in advisor.sessions {
+                print(session.question)
+                print(session.response)
+                print("")
+            }
+            break
+            
+        } else if selection == "N" {
+            break
+        }
+    }
+    
+    // Ask whether the user wants to see more advice
+    while true {
+        print("More advice? (Y/N)")
+        let selection = readLine()!
+        if selection == "Y" {
+            break
+        } else if selection == "N" {
+            exit(0) // Exit program
+        }
+    }
+    
 }
